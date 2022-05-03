@@ -13,6 +13,10 @@ layout: base.njk
 </header>
 <main class="tdbc-container">
   <article class="tdbc-mx-auto">
+    <p>
+      Last Modified: <time datetime="{{dates['last-modified']}}">{{ dates['last-modified'] | formatDate }}
+      </time>
+    </p>
     {{ content | safe }}
   </article>
 </main>

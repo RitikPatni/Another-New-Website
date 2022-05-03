@@ -55,6 +55,22 @@ module.exports = function (eleventyConfig) {
       }),
   });
   eleventyConfig.setLibrary("md", markdownLibrary);
+  eleventyConfig.addNunjucksFilter("formatDate", (date) => {
+    return new Date(date).toLocaleDateString("en-IN", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  });
+  eleventyConfig.addNunjucksFilter("getImageUrlFromIsbn", (isbn) => {
+    return `https://covers.openlibrary.org/b/isbn/${isbn}-M.jpg`;
+  });
+  eleventyConfig.addCollection("readBooks", function (collectionApi) {
+    return collectionApi.getFilteredByTags("book", "read");
+  });
+  eleventyConfig.addCollection("wantToReadBooks", function (collectionApi) {
+    return collectionApi.getFilteredByTags("book", "queued");
+  });
 
   return {
     passthroughFileCopy: true,

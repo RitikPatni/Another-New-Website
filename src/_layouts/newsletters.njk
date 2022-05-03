@@ -6,13 +6,14 @@ layout: base.njk
 <header class="tdbc-hero">
   <div class="tdbc-container">
     <h1 class="tdbc-ink--primary tdbc-mb-none">{{ title }}</h1>
-    <h2 class="tdbc-lead tdbc-content-maxlength tdbc-ink--gray tdbc-mt-md tdbc-mx-auto">
-      {{ description }}
-    </h2>
   </div>
 </header>
 <main class="tdbc-container">
-  <article class="tdbc-mx-auto">
-    {{ content | safe }}
-  </article>
+  <ul>
+    {%- for newsletter in collections.newsletters -%}
+      <li>
+        <a href={{ newsletter.url }}>{{ newsletter.data.title }}</a>
+      </li>
+    {%- endfor -%}
+  </ul>
 </main>
