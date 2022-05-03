@@ -71,6 +71,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("wantToReadBooks", function (collectionApi) {
     return collectionApi.getFilteredByTags("book", "queued");
   });
+  eleventyConfig.addCollection("allBooks", function (collectionApi) {
+    return collectionApi.getFilteredByTags("book");
+  });
 
   return {
     passthroughFileCopy: true,
