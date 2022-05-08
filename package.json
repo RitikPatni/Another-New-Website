@@ -52,5 +52,9 @@
   "browserslist": [
     "> 0.5%",
     "not IE 11"
-  ]
+  ],
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "sanitize-html": "^2.7.0"
+  }
 }
