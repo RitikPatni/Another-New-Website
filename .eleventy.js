@@ -80,6 +80,7 @@ module.exports = function (eleventyConfig) {
     return encodeURI(data)
   })
   eleventyConfig.addFilter('getWebmentionsForUrl', (webmentions, url) => {
+    console.log(webmentions, url);
     const likes = ['like-of'];
     const retweet = ['repost-of'];
     const messages = ['mention-of', 'in-reply-to'];

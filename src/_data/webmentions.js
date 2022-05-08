@@ -75,7 +75,7 @@ function readFromCache() {
   // no cache found.
   return {
     lastFetched: null,
-    children: {}
+    children: []
   };
 }
 
