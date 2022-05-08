@@ -5,4 +5,5 @@ module.exports = {
     "My little corner of the internet where I share my thoughts, learn, and share my knowledge.",
   authorName: "Ritik Patni",
   twitterUsername: "03ritikpatni", // no `@`
+  githubUsername: "ritikpatni", // no `@`
 };
