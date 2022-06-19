@@ -16,8 +16,7 @@ If you're interested in knowing me more you can connect with me on any of the be
   method="post"
   target="popupwindow"
   onsubmit="window.open('https://buttondown.email/ritik', 'popupwindow')"
-  class="embeddable-buttondown-form"
->
+ >
   <label for="bd-email">Enter your email</label>
   <input type="email" name="email" id="bd-email" />
   <input type="submit" value="Subscribe" />

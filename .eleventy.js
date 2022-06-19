@@ -45,7 +45,7 @@ module.exports = function (eleventyConfig) {
     html: true,
   }).use(markdownItAnchor, {
     permalink: markdownItAnchor.permalink.ariaHidden({
-      class: "tdbc-anchor",
+      class: "anchor",
       space: false,
     }),
     level: [1, 2, 3],
@@ -76,9 +76,23 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("allBooks", function (collectionApi) {
     return collectionApi.getFilteredByTags("book");
   });
+  eleventyConfig.addCollection("recentPosts", function (collectionApi) {
+    return collectionApi.getFilteredByTags('blogs');
+  });
   eleventyConfig.addFilter("uniUrlFilter", (data) => {
     return encodeURI(data)
   })
+  eleventyConfig.addCollection("tagList", collection => {
+    const tagsSet = new Set();
+    collection.getAll().forEach(item => {
+      if (!item.data.tags) return;
+      item.data.tags
+        .filter(tag => !['post', 'all'].includes(tag))
+        .forEach(tag => tagsSet.add(tag));
+    });
+    return Array.from(tagsSet).sort();
+  });
+
   eleventyConfig.addFilter('getWebmentionsForUrl', (webmentions, url) => {
     console.log(webmentions, url);
     const likes = ['like-of'];

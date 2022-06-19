@@ -1,18 +1,15 @@
 ---
 layout: base.njk
 ---
-{% include 'sitenav.njk' %}
 
-<header class="tdbc-hero">
-  <div class="tdbc-container">
-    <h1 class="tdbc-ink--primary tdbc-mb-none">{{ title }}</h1>
-  </div>
+<header >
+{% include 'sitenav.njk' %}
 </header>
-<main class="tdbc-container library">
+<main class='main'>
   <h2>Read Books</h2>
-  <ul role="list" class='library__list'>
+  <ul role="list" >
     {%- for book in collections.readBooks -%}
-      <li class='library__list__item'>
+      <li >
         <img src="{{ book.data.isbn | getImageUrlFromIsbn }}" alt="{{book.data.title}}"/>
         <a href={{ book.url }}>{{ book.data.title }}</a>
       </li>

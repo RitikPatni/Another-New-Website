@@ -1,14 +1,11 @@
 ---
 layout: base.njk
 ---
-{% include 'sitenav.njk' %}
 
-<header class="tdbc-hero">
-  <div class="tdbc-container">
-    <h1 class="tdbc-ink--primary tdbc-mb-none">{{ title }}</h1>
-  </div>
+<header >
+{% include 'sitenav.njk' %}
 </header>
-<main class="tdbc-container">
+<main class='main'>
   <ul>
     {%- for blog in collections.blogs -%}
       <li>

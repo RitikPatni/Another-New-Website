@@ -2,7 +2,7 @@
 {%- set mentions = webmentions.children | getWebmentionsForUrl(currentUrl) -%}
 <ol>
   {% for webmention in mentions.likes %}
-    <li class="webmentions__item">
+    <li >
       <a {% if webmention.url %}href="{{ webmention.url }}"{% endif %} target="_blank" rel="noopener noreferrer" title="{{ webmention.author.name }}">
         {% if webmention.author.photo %}
           <img src="{{ webmention.author.photo }}" alt="{{ webmention.author.name }}" width="48" height="48" loading="lazy">
@@ -16,7 +16,7 @@
 
 <ol>
   {% for webmention in mentions.retweets %}
-    <li class="webmentions__item">
+    <li >
       <a {% if webmention.url %}href="{{ webmention.url }}"{% endif %} target="_blank" rel="noopener noreferrer" title="{{ webmention.author.name }}">
         {% if webmention.author.photo %}
           <img src="{{ webmention.author.photo }}" alt="{{ webmention.author.name }}" width="48" height="48" loading="lazy">
@@ -30,7 +30,7 @@
 
 <ol>
   {% for webmention in mentions.messages %}
-    <li class="webmentions__item">
+    <li >
       <a {% if webmention.url %}href="{{ webmention.url }}"{% endif %} target="_blank" rel="noopener noreferrer" title="{{ webmention.author.name }}">
         {% if webmention.author.photo %}
           <img src="{{ webmention.author.photo }}" alt="{{ webmention.author.name }}" width="48" height="48" loading="lazy">
@@ -39,7 +39,7 @@
         {% endif %}
       </a>
       <strong>{{ webmention.author.name }}</strong>
-      <time class="dt-published" datetime="{{ webmention.published | w3DateFilter }}">
+      <time  datetime="{{ webmention.published | w3DateFilter }}">
         {{ webmention.published | dateFilter }}
       </time>
       {{ webmention.content.html | safe }}
