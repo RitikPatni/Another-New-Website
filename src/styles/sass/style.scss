@@ -1,18 +1,16 @@
 :root {
-  --base-font-size: var(--font-size-2);
-  --base-padding-horizontal: var(--size-4);
+  --base-font-size: 1rem;
 }
 body {
-  font-family: var(--font-sans);
+  font-family: sans-serif;
   font-size: var(--base-font-size);
   display: grid;
-  gap: var(--size-3);
+  gap: 1rem;
   height: 100vh;
   grid-template-rows: auto 1fr auto;
 }
 .nav {
-  padding: var(--size-4) var(--base-padding-horizontal);
-  background-color: var(--gray-9);
+  padding: 1.25rem 1.25rem;
 }
 .nav__container {
   display: flex;
@@ -21,61 +19,55 @@ body {
   flex-wrap: wrap;
 }
 .nav__container__link {
-  font-size: var(--font-size-4);
+  font-size: 1.25rem;
 }
 .nav__container__links {
   display: flex;
-  gap: var(--size-2);
-  font-size: var(--font-size-3);
+  gap: 0.5rem;
+  font-size: 1rem;
   justify-content: space-between;
   width: 100%;
 }
 .nav__container__link,
 .nav__container__links__link {
-  color: var(--gray-0);
   text-decoration: none;
 }
 
 .nav__container__link:visited,
 .nav__container__links__link:visited {
-  color: var(--gray-1);
 }
 .nav__container__link[aria-current],
 .nav__container__links__link[aria-current] {
-  font-weight: var(--font-weight-8);
   text-decoration: underline;
 }
 .main {
-  padding: var(--base-padding-horizontal);
+  padding: 1.25rem;
   display: grid;
-  gap: var(--size-3);
+  gap: 1rem;
   align-content: start;
 }
 .main__title {
-  font-size: var(--font-size-6);
+  font-size: 1.75rem;
   font-weight: var(--font-weight-8);
 }
 .main__description {
-  font-size: var(--font-size-3);
+  font-size: 1rem;
 }
 .main__section {
   display: grid;
-  gap: var(--size-3);
+  gap: 1rem;
 }
 .main__section__title {
-  font-size: var(--font-size-4);
+  font-size: 1.25rem;
   font-weight: var(--font-weight-8);
 }
 .footer {
-  padding: var(--size-2) var(--base-padding-horizontal);
-  background-color: var(--gray-9);
-  color: var(--gray-0);
+  padding: 0.5rem 1.25rem;
 }
 .footer__links {
   display: flex;
   justify-content: space-between;
 }
 .footer__links__link {
-  color: var(--gray-0);
   text-decoration: none;
 }
